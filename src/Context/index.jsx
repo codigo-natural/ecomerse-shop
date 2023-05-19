@@ -28,6 +28,10 @@ export const ShoppingCartProvider = ({children}) => {
 
   // Get products
   const [items, setItems] = useState(null)
+  
+  // Search products by Title
+  const [search, setSearch] = useState(null)
+  console.log(search)
 
   useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/products')
@@ -52,7 +56,9 @@ export const ShoppingCartProvider = ({children}) => {
       order,
       setOrder,
       items,
-      setItems
+      setItems,
+      search,
+      setSearch
     }}>
       {children}
     </ShoppingCartContext.Provider>
